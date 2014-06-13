@@ -1,5 +1,6 @@
 /*
-* I was trying a sort algorithm, and this one works but not for much after an integer array larger that 10000. Can anyone explain why?
+* I was trying a sort algorithm, and this one works but not for much after an integer array 
+* larger that 10000. Can anyone explain why?
 */
 package random;
 import java.util.*;
