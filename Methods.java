@@ -5,7 +5,7 @@ public class Methods{
       s = ""; //get a new value for s
     }
   }
-  public static void onlyNumsDouble(String s){
+  public static boolean onlyNumsDouble(String s){
     s = s.trim();
     for(int w = 0; w < 10; w++){
       s = s.replaceAll(w + "", "");
