@@ -1,5 +1,5 @@
 import java.util.*;
-//Code made by codeninjathe on GitHub
+//Code made by codeninjathe on github
 public class TowerOfHanoi {
 	private static ArrayList<Integer> ring1 = new ArrayList<Integer>();
 	private static ArrayList<Integer> ring2 = new ArrayList<Integer>();
@@ -33,6 +33,7 @@ public class TowerOfHanoi {
 
 	private static void swap(int from, int to) {
 		int num = -1;
+		boolean okay = true;
 		if (from == to) {
 			System.out
 					.println("I believe it is somewhat redundant to switch a ring to itself");
@@ -64,61 +65,73 @@ public class TowerOfHanoi {
 					num = ring1.remove(ring1.size() - 1);
 					switch (to) {
 					case 1:
-						if(ring1.size() == 0)
+						if (ring1.size() == 0)
 							ring1.add(num);
-						else if (ring1.get(ring1.size() - 1) < num)
-							System.out.println("Error, invalid move");
-						else
-							ring1.add(num);
-						break;
-					case 2:
-						if(ring2.size() == 0)
-							ring2.add(num);
-						else if (ring2.get(ring2.size() - 1) < num)
-							System.out.println("Error, invalid move");
-						else
-							ring2.add(num);
-						break;
-					case 3:
-						if (ring3.size() == 0)
-							ring3.add(num);
-						else if (ring3.get(ring3.size() - 1) < num)
-							System.out.println("Error, invalid move");
-						else
-							ring3.add(num);
-						break;
-					default:
-					}
-					break;
-				case 2:
-					num = ring2.remove(ring2.size() - 1);
-					switch (to) {
-					case 1:
-						if(ring1.size() == 0)
-							ring1.add(num);
-						else if (ring1.get(ring1.size() - 1) < num)
-							System.out.println("Error, invalid move");
-						else
+						else if (ring1.get(ring1.size() - 1) < num) {
+							{
+								System.out.println("Error, invalid move");
+								okay = false;
+							}
+						} else
 							ring1.add(num);
 						break;
 					case 2:
 						if (ring2.size() == 0)
 							ring2.add(num);
-						else if (ring2.get(ring2.size() - 1) < num)
+						else if (ring2.get(ring2.size() - 1) < num) {
 							System.out.println("Error, invalid move");
-						else
+							okay = false;
+						} else
 							ring2.add(num);
 						break;
 					case 3:
 						if (ring3.size() == 0)
 							ring3.add(num);
-						else if (ring3.get(ring3.size() - 1) < num)
+						else if (ring3.get(ring3.size() - 1) < num) {
 							System.out.println("Error, invalid move");
-						else
+							okay = false;
+						} else
 							ring3.add(num);
 						break;
 					default:
 					}
+					if (!okay)
+						ring1.add(num);
+					break;
+				case 2:
+					num = ring2.remove(ring2.size() - 1);
+					switch (to) {
+					case 1:
+						if (ring1.size() == 0)
+							ring1.add(num);
+						else if (ring1.get(ring1.size() - 1) < num) {
+							System.out.println("Error, invalid move");
+							okay = false;
+						} else
+							ring1.add(num);
+						break;
+					case 2:
+						if (ring2.size() == 0)
+							ring2.add(num);
+						else if (ring2.get(ring2.size() - 1) < num) {
+							System.out.println("Error, invalid move");
+							okay = false;
+						} else
+							ring2.add(num);
+						break;
+					case 3:
+						if (ring3.size() == 0)
+							ring3.add(num);
+						else if (ring3.get(ring3.size() - 1) < num) {
+							System.out.println("Error, invalid move");
+							okay = false;
+						} else
+							ring3.add(num);
+						break;
+					default:
+					}
+					if (!okay)
+						ring2.add(num);
 					break;
 				case 3:
 					num = ring3.remove(ring3.size() - 1);
@@ -126,29 +139,34 @@ public class TowerOfHanoi {
 					case 1:
 						if (ring1.size() == 0)
 							ring1.add(num);
-						else if (ring1.get(ring1.size() - 1) < num)
+						else if (ring1.get(ring1.size() - 1) < num) {
 							System.out.println("Error, invalid move");
-						else
+							okay = false;
+						} else
 							ring1.add(num);
 						break;
 					case 2:
 						if (ring2.size() == 0)
 							ring2.add(num);
-						else if (ring2.get(ring2.size() - 1) < num)
+						else if (ring2.get(ring2.size() - 1) < num) {
 							System.out.println("Error, invalid move");
-						else
+							okay = false;
+						} else
 							ring2.add(num);
 						break;
 					case 3:
 						if (ring3.size() == 0)
 							ring3.add(num);
-						else if (ring3.get(ring3.size() - 1) < num)
+						else if (ring3.get(ring3.size() - 1) < num) {
 							System.out.println("Error, invalid move");
-						else
+							okay = false;
+						} else
 							ring3.add(num);
 						break;
 					default:
 					}
+					if (!okay)
+						ring3.add(num);
 					break;
 				default:
 				}
